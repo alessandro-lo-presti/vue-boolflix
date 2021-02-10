@@ -45,3 +45,7 @@ main .card {
 main .card img {
   width: 100%;
 }
+
+main .card i.active {
+  color: rgb(241, 239, 23);
+}

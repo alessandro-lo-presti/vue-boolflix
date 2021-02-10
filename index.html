@@ -40,7 +40,9 @@
             <div>Titolo: {{ m.title }}</div>
             <div>Titolo originale: {{ m.original_title }}</div>
             <div>Lingua originale: {{ m.original_language }}</div>
-            <div>Voto: {{ m.vote_average }}</div>
+            <div>
+              <i v-for="i in 5" class="fas fa-star" :class="(i <= Math.floor(m.vote_average / 2)) ? 'active' : ''"></i>
+            </div>
           </div>
 
         </div>
