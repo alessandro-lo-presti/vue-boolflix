@@ -22,17 +22,19 @@
           <img src="img/netflix.png" alt="logo">
 
           <div class="search-box">
-            <input type="text" placeholder="Inserisci testo...">
-            <button>Cerca</button>
+            <input v-model="search" type="text" placeholder="Inserisci titolo..." @keyup.enter="searchMovies">
+            <button @click="searchMovies">Cerca</button>
           </div>
 
         </div>
       </header>
       <!-- / header -->
 
+      <!-- main -->
       <main>
 
       </main>
+      <!-- / main -->
 
     </div>
 
