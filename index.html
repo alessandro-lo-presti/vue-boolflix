@@ -33,6 +33,17 @@
       <!-- main -->
       <main>
 
+        <div class="container">
+
+          <div v-for="m in movies" class="card">
+            <div>Titolo: {{ m.title }}</div>
+            <div>Titolo originale: {{ m.original_title }}</div>
+            <div>Lingua originale: {{ m.original_language }}</div>
+            <div>Voto: {{ m.vote_average }}</div>
+          </div>
+
+        </div>
+
       </main>
       <!-- / main -->
 
