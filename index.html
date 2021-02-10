@@ -36,6 +36,7 @@
         <div class="container">
 
           <div v-for="m in movies" class="card">
+            <img :src="'https://image.tmdb.org/t/p/w500/' + m.poster_path" alt="prova">
             <div>Titolo: {{ m.title }}</div>
             <div>Titolo originale: {{ m.original_title }}</div>
             <div>Lingua originale: {{ m.original_language }}</div>
