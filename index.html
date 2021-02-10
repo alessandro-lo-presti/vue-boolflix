@@ -22,8 +22,8 @@
           <img src="img/netflix.png" alt="logo">
 
           <div class="search-box">
-            <input v-model="search" type="text" placeholder="Inserisci titolo..." @keyup.enter="searchMovies">
-            <button @click="searchMovies">Cerca</button>
+            <input v-model="searchField" type="text" placeholder="Inserisci titolo..." @keyup.enter="search">
+            <button @click="search">Cerca</button>
           </div>
 
         </div>
@@ -35,8 +35,9 @@
 
         <div class="container">
 
+          <!-- movie-cards -->
           <div v-for="m in movies" class="card">
-            <img :src="'https://image.tmdb.org/t/p/w500/' + m.poster_path" alt="prova">
+            <img :src="'https://image.tmdb.org/t/p/w500/' + m.poster_path" alt="movie_poster">
             <div>Titolo: {{ m.title }}</div>
             <div>Titolo originale: {{ m.original_title }}</div>
             <div>Lingua originale: {{ m.original_language }}</div>
@@ -44,6 +45,19 @@
               <i v-for="i in 5" class="fas fa-star" :class="(i <= Math.round(m.vote_average / 2)) ? 'active' : ''"></i>
             </div>
           </div>
+          <!-- / movie-cards -->
+
+          <!-- tv-cards -->
+          <div v-for="s in tvSeries" class="card">
+            <img :src="'https://image.tmdb.org/t/p/w500/' + s.poster_path" alt="series_poster">
+            <div>Titolo: {{ s.name }}</div>
+            <div>Titolo originale: {{ s.original_name }}</div>
+            <div>Lingua originale: {{ s.original_language }}</div>
+            <div>
+              <i v-for="i in 5" class="fas fa-star" :class="(i <= Math.round(s.vote_average / 2)) ? 'active' : ''"></i>
+            </div>
+          </div>
+          <!-- / tv-cards -->
 
         </div>
 
