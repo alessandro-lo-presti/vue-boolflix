@@ -28,7 +28,6 @@ a{
 /* header */
 header {
   background: linear-gradient(#060606, #141414);
-  font-size: 14px;
 }
 
 header .container{
@@ -67,7 +66,41 @@ header .container > div {
   font-weight: bold;
 }
 
+/* header-right */
+.header-right > i, .header-right > img {
+  margin-left: 20px;
+  cursor: pointer;
+}
 
+.header-right > i {
+  font-size: 20px;
+}
+
+.header-right > i:last-child {
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.header-right .search-box {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  background-color: #030303;
+}
+
+.header-right .search-box i {
+  margin-right: 15px;
+  margin-left: 3px;
+  cursor: pointer;
+}
+
+.header-right .search-box input{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+}
 
 /* main */
 main {
