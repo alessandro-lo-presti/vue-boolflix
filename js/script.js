@@ -4,10 +4,10 @@ var app = new Vue({
     apiKey: "4ab0d1d0499ee909a6c7be564ccd102f",
     language: "it",
     searchField: "",
-    movies: [],
-    tvSeries: []
+    results: []
   },
   methods: {
+    // ricerca film
     searchMovies() {
       axios
       .get("https://api.themoviedb.org/3/search/movie", {
@@ -18,10 +18,12 @@ var app = new Vue({
         }
       })
       .then((result) => {
-        this.movies = result.data.results;
+        this.results = this.results.concat(result.data.results);
+        this.results.sort((a, b) => b.popularity - a.popularity);
       })
       .catch((error) => console.log(error));
     },
+    // ricerca serie
     searchSeries() {
       axios
       .get("https://api.themoviedb.org/3/search/tv", {
@@ -32,14 +34,18 @@ var app = new Vue({
         }
       })
       .then((result) => {
-        this.tvSeries = result.data.results;
+        this.results = this.results.concat(result.data.results);
+        this.results.sort((a, b) => b.popularity - a.popularity);
       })
       .catch((error) => console.log(error));
     },
+    // ricerca film e serie
     search() {
+      this.results = [];
       this.searchMovies();
       this.searchSeries();
     },
+    // contorllo per ridurre la lunghezza del campo overview
     lengthControl(text, max) {
       let newText = text.substring(0, max);
 

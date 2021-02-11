@@ -24,7 +24,9 @@
 
           <!-- header-left -->
           <div class="header-left">
-            <img src="img/netflix.png" alt="logo">
+            <a href="#">
+              <img src="img/netflix.png" alt="logo">
+            </a>
 
             <nav>
               <ul class="nav-menu">
@@ -58,70 +60,47 @@
 
         <div class="container">
 
-          <!-- movie-cards -->
-          <div v-for="m in movies" class="card">
+          <!-- cards -->
+          <div v-for="r in results" class="card">
 
-            <img v-if="m.poster_path != null" class="poster" :src="'https://image.tmdb.org/t/p/w500/' + m.poster_path" alt="movie_poster">
+            <img v-if="r.poster_path != null" class="poster" :src="'https://image.tmdb.org/t/p/w500/' + r.poster_path" alt="poster">
             <img v-else class="poster" src="img/placeholder.jpg" alt="">
 
             <div class="info-box">
 
-              <div>
+              <!-- title -->
+              <div v-if="r.hasOwnProperty('title')">
                 <span class="info">Titolo: </span>
-                {{ m.title }}
+                {{ r.title }}
               </div>
-              <div v-if="m.original_title != m.title">
+              <div v-else>
+                <span class="info">Titolo: </span>
+                {{ r.name }}
+              </div>
+              <!-- / title -->
+
+              <!-- title -->
+              <div v-if="r.hasOwnProperty('original_title')">
                 <span class="info">Titolo Originale: </span>
-                {{ m.original_title }}
+                {{ r.original_title }}
               </div>
-              <div v-if="m.overview != ''" class="overview">
-                <span class="info">Overview: </span>
-                {{ lengthControl(m.overview, 430) }}
-              </div>
-
-              <div class="vl-box">
-
-                <div v-if="m.original_language == 'it'" class="lang">
-                  <img class="flag" src="img/it.png">
-                </div>
-                <div v-else class="lang">
-                  <img class="flag" src="img/en.png">
-                </div>
-
-                <span class="info">Voto: </span>
-                <i v-for="i in 5" class="fas fa-star" :class="(i <= Math.round(m.vote_average / 2)) ? 'active' : ''"></i>
-
-              </div>
-
-            </div>
-
-          </div>
-          <!-- / movie-cards -->
-
-          <!-- tv-cards -->
-          <div v-for="s in tvSeries" class="card">
-
-            <img v-if="s.poster_path != null" class="poster" :src="'https://image.tmdb.org/t/p/w500/' + s.poster_path" alt="series_poster">
-            <img v-else class="poster" src="img/placeholder.jpg" alt="">
-
-            <div class="info-box">
-
-              <div>
-                <span class="info">Titolo: </span>
-                {{ s.name }}
-              </div>
-              <div v-if="s.original_title != s.title">
+              <div v-else>
                 <span class="info">Titolo originale: </span>
-                {{ s.original_name }}
+                {{ r.original_name }}
               </div>
-              <div v-if="s.overview != ''" class="overview">
-                <span class="info">Overview: </span>
-                {{ lengthControl(s.overview, 430) }}
-              </div>
+              <!-- / title -->
 
+              <!-- overview -->
+              <div v-if="r.overview != ''" class="overview">
+                <span class="info">Overview: </span>
+                {{ lengthControl(r.overview, 430) }}
+              </div>
+              <!-- / overview -->
+
+              <!-- vl-box -->
               <div class="vl-box">
 
-                <div v-if="s.original_language == 'it'" class="lang">
+                <div v-if="r.original_language == 'it'" class="lang">
                   <img class="flag" src="img/it.png">
                 </div>
                 <div v-else class="lang">
@@ -129,14 +108,15 @@
                 </div>
 
                 <span class="info">Voto: </span>
-                <i v-for="i in 5" class="fas fa-star" :class="(i <= Math.round(s.vote_average / 2)) ? 'active' : ''"></i>
+                <i v-for="i in 5" class="fas fa-star" :class="(i <= Math.round(r.vote_average / 2)) ? 'active' : ''"></i>
 
               </div>
+              <!-- / vl-box -->
 
             </div>
 
           </div>
-          <!-- / tv-cards -->
+          <!-- / cards -->
 
         </div>
 

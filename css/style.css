@@ -103,9 +103,6 @@ header .container > div {
 }
 
 /* main */
-/* main {
-  padding: 10px;
-} */
 
 main .container {
   flex-wrap: wrap;
