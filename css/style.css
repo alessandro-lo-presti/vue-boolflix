@@ -11,18 +11,27 @@ body {
 
 .container {
   max-width: calc(100vw - 120px);
-  height: 70px;
   margin: auto;
   display: flex;
 }
 
 /* header */
+header {
+  background: linear-gradient(#060606, #141414);
+}
+
 header .container{
+  height: 70px;
   justify-content: space-between;
+}
+
+header .container > div {
+  display: flex;
   align-items: center;
 }
 
-header .container img {
+/* header-left */
+.header-left img {
   height: 30px;
 }
 

@@ -19,9 +19,11 @@
       <header>
         <div class="container">
 
-          <img src="img/netflix.png" alt="logo">
+          <div class="header-left">
+            <img src="img/netflix.png" alt="logo">
+          </div>
 
-          <div class="search-box">
+          <div class="header-right">
             <input v-model="searchField" type="text" placeholder="Inserisci titolo..." @keyup.enter="search">
             <button @click="search">Cerca</button>
           </div>
