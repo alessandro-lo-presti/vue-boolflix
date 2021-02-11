@@ -63,7 +63,7 @@
           <!-- cards -->
           <div v-for="r in results" class="card">
 
-            <img v-if="r.poster_path != null" class="poster" :src="'https://image.tmdb.org/t/p/w500/' + r.poster_path" alt="poster">
+            <img v-if="r.poster_path != null" class="poster" :src="'https://image.tmdb.org/t/p/w500/' + r.poster_path">
             <img v-else class="poster" src="img/placeholder.jpg" alt="">
 
             <div class="info-box">
@@ -104,11 +104,11 @@
               <!-- vl-box -->
               <div class="vl-box">
 
-                <div v-if="r.original_language == 'it'" class="lang">
-                  <img class="flag" src="img/it.png">
+                <div v-if="flags.includes(r.original_language)" class="lang">
+                  <img class="flag" :src="'img/'+ r.original_language +'.png'">
                 </div>
                 <div v-else class="lang">
-                  <img class="flag" src="img/en.png">
+                  <img class="flag" src="img/genericFlag.png">
                 </div>
 
                 <span class="info">Voto: </span>

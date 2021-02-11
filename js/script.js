@@ -3,6 +3,7 @@ var app = new Vue({
   data: {
     apiKey: "4ab0d1d0499ee909a6c7be564ccd102f",
     language: "it",
+    flags: ["it", "en"],
     searchField: "",
     results: []
   },
