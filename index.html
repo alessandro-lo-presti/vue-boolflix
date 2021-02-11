@@ -76,7 +76,7 @@
               </div>
               <div v-if="m.overview != ''" class="overview">
                 <span class="info">Overview: </span>
-                {{ m.overview.substring(0, 430) }}
+                {{ lengthControl(m.overview, 430) }}
               </div>
 
               <div class="vl-box">
@@ -116,7 +116,7 @@
               </div>
               <div v-if="s.overview != ''" class="overview">
                 <span class="info">Overview: </span>
-                {{ s.overview.substring(0, 430) }}
+                {{ lengthControl(s.overview, 430) }}
               </div>
 
               <div class="vl-box">

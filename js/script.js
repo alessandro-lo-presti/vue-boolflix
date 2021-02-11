@@ -39,6 +39,23 @@ var app = new Vue({
     search() {
       this.searchMovies();
       this.searchSeries();
+    },
+    lengthControl(text, max) {
+      let newText = text.substring(0, max);
+
+      if(newText.length == max && max != 0) {
+
+        let i = 1;
+
+        while(newText[max-i] != " ") {
+          i++;
+        }
+
+        newText = newText.substring(0, max-i);
+        newText += "...";
+
+      }
+      return newText;
     }
   }
 });
