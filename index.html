@@ -79,16 +79,20 @@
               </div>
               <!-- / title -->
 
-              <!-- title -->
+              <!-- original-title -->
               <div v-if="r.hasOwnProperty('original_title')">
-                <span class="info">Titolo Originale: </span>
-                {{ r.original_title }}
+                <div v-if="r.original_title != r.title">
+                  <span  class="info">Titolo Originale: </span>
+                  {{ r.original_title }}
+                </div>
               </div>
               <div v-else>
-                <span class="info">Titolo originale: </span>
-                {{ r.original_name }}
+                <div v-if="r.original_name != r.name">
+                  <span class="info">Titolo originale: </span>
+                  {{ r.original_name }}
+                </div>
               </div>
-              <!-- / title -->
+              <!-- / original-title -->
 
               <!-- overview -->
               <div v-if="r.overview != ''" class="overview">
