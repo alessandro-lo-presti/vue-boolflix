@@ -132,20 +132,12 @@ main .card .poster {
   border-radius: 2px;
 }
 
-main .card i.active {
-  color: rgb(241, 239, 23);
-}
-
-main .card .flag {
-  width: 100px;
-  height: 50px;
-}
-
 main .card .info-box {
   display: none;
 }
 
 main .card:hover .info-box {
+  padding: 30px 10px 0;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -154,4 +146,31 @@ main .card:hover .info-box {
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
+  font-size: 14px;
+}
+
+main .card .info-box .info {
+  font-weight: bold;
+}
+
+
+main .card .info-box .vl-box {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+main .card .info-box .vl-box i.active {
+  color: rgb(241, 239, 23);
+}
+
+main .card .info-box .vl-box .lang {
+  margin-bottom: 10px;
+}
+
+main .card .info-box .vl-box .lang .flag {
+  width: 80px;
+  height: 40px;
 }

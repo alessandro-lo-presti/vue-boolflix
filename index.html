@@ -65,17 +65,34 @@
             <img v-else class="poster" src="img/placeholder.jpg" alt="">
 
             <div class="info-box">
-              <div>{{ m.title }}</div>
-              <div>{{ m.original_title }}</div>
+
               <div>
+                <span class="info">Titolo: </span>
+                {{ m.title }}
+              </div>
+              <div v-if="m.original_title != m.title">
+                <span class="info">Titolo Originale: </span>
+                {{ m.original_title }}
+              </div>
+              <div v-if="m.overview != ''" class="overview">
+                <span class="info">Overview: </span>
+                {{ m.overview.substring(0, 430) }}
+              </div>
+
+              <div class="vl-box">
+
+                <div v-if="m.original_language == 'it'" class="lang">
+                  <img class="flag" src="img/it.png">
+                </div>
+                <div v-else class="lang">
+                  <img class="flag" src="img/en.png">
+                </div>
+
+                <span class="info">Voto: </span>
                 <i v-for="i in 5" class="fas fa-star" :class="(i <= Math.round(m.vote_average / 2)) ? 'active' : ''"></i>
+
               </div>
-              <div v-if="m.original_language == 'it'">
-                <img class="flag" src="img/it.png">
-              </div>
-              <div v-else>
-                <img class="flag" src="img/en.png">
-              </div>
+
             </div>
 
           </div>
@@ -88,17 +105,34 @@
             <img v-else class="poster" src="img/placeholder.jpg" alt="">
 
             <div class="info-box">
-              <div>{{ s.name }}</div>
-              <div>{{ s.original_name }}</div>
+
               <div>
+                <span class="info">Titolo: </span>
+                {{ s.name }}
+              </div>
+              <div v-if="s.original_title != s.title">
+                <span class="info">Titolo originale: </span>
+                {{ s.original_name }}
+              </div>
+              <div v-if="s.overview != ''" class="overview">
+                <span class="info">Overview: </span>
+                {{ s.overview.substring(0, 430) }}
+              </div>
+
+              <div class="vl-box">
+
+                <div v-if="s.original_language == 'it'" class="lang">
+                  <img class="flag" src="img/it.png">
+                </div>
+                <div v-else class="lang">
+                  <img class="flag" src="img/en.png">
+                </div>
+
+                <span class="info">Voto: </span>
                 <i v-for="i in 5" class="fas fa-star" :class="(i <= Math.round(s.vote_average / 2)) ? 'active' : ''"></i>
+
               </div>
-              <div v-if="s.original_language == 'it'">
-                <img class="flag" src="img/it.png">
-              </div>
-              <div v-else>
-                <img class="flag" src="img/en.png">
-              </div>
+
             </div>
 
           </div>
