@@ -53,12 +53,13 @@
           <div v-for="m in movies" class="card">
             <img v-if="m.poster_path != null" :src="'https://image.tmdb.org/t/p/w500/' + m.poster_path" alt="movie_poster">
             <img v-else src="img/placeholder.jpg" alt="">
-            <div>Titolo: {{ m.title }}</div>
-            <div>Titolo originale: {{ m.original_title }}</div>
-            <div>Lingua originale: {{ m.original_language }}</div>
+            <div>{{ m.title }}</div>
+            <div>{{ m.original_title }}</div>
             <div>
               <i v-for="i in 5" class="fas fa-star" :class="(i <= Math.round(m.vote_average / 2)) ? 'active' : ''"></i>
             </div>
+            <div v-if="m.original_language == 'it'"> <img src="img/it.png"></div>
+            <div v-else> <img src="img/en.png"></div>
           </div>
           <!-- / movie-cards -->
 
