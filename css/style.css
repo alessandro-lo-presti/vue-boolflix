@@ -117,6 +117,12 @@ main .card {
   margin: 30px 2px 30px;
   /* border: 1px solid white; */
   border-radius: 2px;
+  transition: transform 1s;
+}
+
+main .card:hover {
+  transform: scale(1.15);
+  z-index: 1;
 }
 
 main .card .poster {
