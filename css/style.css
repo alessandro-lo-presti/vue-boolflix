@@ -103,24 +103,26 @@ header .container > div {
 }
 
 /* main */
-main {
-  padding: 20px;
-}
+/* main {
+  padding: 10px;
+} */
 
 main .container {
   flex-wrap: wrap;
 }
 
 main .card {
-  flex-basis: calc(100% / 6);
-  /* margin: 0 calc(100% / 60) 50px; */
-  padding: 10px;
-  border: 1px solid white;
+  flex-basis: calc(100% / 6 - 4px);
+  height: 400px;
+  margin: 30px 2px 30px;
+  /* border: 1px solid white; */
+  border-radius: 2px;
 }
 
 main .card .poster {
   width: 100%;
-  height: 417px;
+  height: 100%;
+  border-radius: 2px;
 }
 
 main .card i.active {
