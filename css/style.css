@@ -7,6 +7,16 @@
 body {
   background-color: #141414;
   color: white;
+  font-family: 'Lato', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a{
+  color: white;
+  text-decoration: none;
 }
 
 .container {
@@ -18,6 +28,7 @@ body {
 /* header */
 header {
   background: linear-gradient(#060606, #141414);
+  font-size: 14px;
 }
 
 header .container{
@@ -34,6 +45,29 @@ header .container > div {
 .header-left img {
   height: 30px;
 }
+
+.header-left nav {
+  margin-left: 25px;
+}
+
+.header-left ul {
+  display: flex;
+}
+
+.header-left li {
+  margin-left: 20px;
+}
+
+.header-left li a {
+  color: #e0eff7;
+}
+
+.header-left li.active a {
+  color: white;
+  font-weight: bold;
+}
+
+
 
 /* main */
 main {
