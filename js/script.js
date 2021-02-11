@@ -8,8 +8,7 @@ var app = new Vue({
     tvSeries: []
   },
   methods: {
-    search() {
-      // film
+    searchMovies() {
       axios
       .get("https://api.themoviedb.org/3/search/movie", {
         params: {
@@ -22,8 +21,8 @@ var app = new Vue({
         this.movies = result.data.results;
       })
       .catch((error) => console.log(error));
-
-      // serie
+    },
+    searchSeries() {
       axios
       .get("https://api.themoviedb.org/3/search/tv", {
         params: {
@@ -36,6 +35,10 @@ var app = new Vue({
         this.tvSeries = result.data.results;
       })
       .catch((error) => console.log(error));
+    },
+    search() {
+      this.searchMovies();
+      this.searchSeries();
     }
   }
 });
