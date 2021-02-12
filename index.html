@@ -94,6 +94,13 @@
               </div>
               <!-- / original-title -->
 
+              <!-- cast -->
+              <div v-if="r.hasOwnProperty('cast')">
+                <span class="info">Cast: </span>
+                <span v-for="i in r.cast.length">{{ (i-1 == 0) ? r.cast[i-1].name : ", " + r.cast[i-1].name }}</span>
+              </div>
+              <!-- / cast -->
+
               <!-- overview -->
               <div v-if="r.overview != ''" class="overview">
                 <span class="info">Overview: </span>
