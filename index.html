@@ -60,8 +60,24 @@
 
         <div class="container">
 
+          <div class="setting-search">
+
+            <!-- filter -->
+            <div class="filter">
+              <label>Filtra</label>
+              <select v-model="filter">
+                <option value="all">All</option>
+                <option v-for="i in numGenres.length" :value="numGenres[i-1]">
+                  {{ genres[i-1] }}
+                </option>
+              </select>
+            </div>
+            <!-- / filter -->
+
+          </div>
+
           <!-- cards -->
-          <div v-for="r in results" class="card">
+          <div v-for="r in results" class="card" v-if="filter == 'all' || r.genre_ids.includes(filter)">
 
             <img v-if="r.poster_path != null" class="poster" :src="'https://image.tmdb.org/t/p/w500/' + r.poster_path">
             <img v-else class="poster" src="img/placeholder.jpg" alt="">

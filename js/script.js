@@ -8,7 +8,8 @@ var app = new Vue({
     results: [],
     numGenres: [],
     genres: [],
-    maxDescriptionLength: 300
+    maxDescriptionLength: 300,
+    filter: "all"
   },
   created() {
     // generi film
