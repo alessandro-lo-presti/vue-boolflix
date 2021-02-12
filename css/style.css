@@ -143,24 +143,23 @@ main .card:hover .info-box {
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   font-size: 14px;
-}
-
-main .card .info-box > div:not(.vl-box) {
-  margin-bottom: 5px;
 }
 
 main .card .info-box .info {
   font-weight: bold;
 }
 
+main .card .info-box .info-text > div {
+  padding-bottom: 5px;
+}
 
 main .card .info-box .vl-box {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  height: 65px;
+  padding-bottom: 15px;
   text-align: center;
+
 }
 
 main .card .info-box .vl-box i.active {
@@ -168,10 +167,10 @@ main .card .info-box .vl-box i.active {
 }
 
 main .card .info-box .vl-box .lang {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 main .card .info-box .vl-box .lang .flag {
-  width: 80px;
-  height: 40px;
+  width: 50px;
+  height: 25px;
 }

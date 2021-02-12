@@ -68,54 +68,57 @@
 
             <div class="info-box">
 
-              <!-- title -->
-              <div v-if="r.hasOwnProperty('title')">
-                <span class="info">Titolo: </span>
-                {{ r.title }}
-              </div>
-              <div v-else>
-                <span class="info">Titolo: </span>
-                {{ r.name }}
-              </div>
-              <!-- / title -->
-
-              <!-- original-title -->
-              <div v-if="r.hasOwnProperty('original_title')">
-                <div v-if="r.original_title != r.title">
-                  <span  class="info">Titolo Originale: </span>
-                  {{ r.original_title }}
+              <div class="info-text">
+                <!-- title -->
+                <div v-if="r.hasOwnProperty('title')">
+                  <span class="info">Titolo: </span>
+                  {{ r.title }}
                 </div>
-              </div>
-              <div v-else>
-                <div v-if="r.original_name != r.name">
-                  <span class="info">Titolo originale: </span>
-                  {{ r.original_name }}
+                <div v-else>
+                  <span class="info">Titolo: </span>
+                  {{ r.name }}
                 </div>
-              </div>
-              <!-- / original-title -->
+                <!-- / title -->
 
-              <!-- genres -->
-              <div v-if="r.genre_ids.length > 0">
-                <span class="info">Generi: </span>
-                <span v-for="i in r.genre_ids.length">
-                  {{ (i-1 == 0) ? getGenre(r.genre_ids[i-1], i-1) : ", " + getGenre(r.genre_ids[i-1], i-1) }}
-                </span>
-              </div>
-              <!-- / genres -->
+                <!-- original-title -->
+                <div v-if="r.hasOwnProperty('original_title')">
+                  <div v-if="r.original_title != r.title">
+                    <span  class="info">Titolo Originale: </span>
+                    {{ r.original_title }}
+                  </div>
+                </div>
+                <div v-else>
+                  <div v-if="r.original_name != r.name">
+                    <span class="info">Titolo originale: </span>
+                    {{ r.original_name }}
+                  </div>
+                </div>
+                <!-- / original-title -->
 
-              <!-- cast -->
-              <div v-if="r.hasOwnProperty('cast') && r.cast.length > 0">
-                <span class="info">Cast: </span>
-                <span v-for="i in r.cast.length">{{ (i-1 == 0) ? r.cast[i-1].name : ", " + r.cast[i-1].name }}</span>
-              </div>
-              <!-- / cast -->
+                <!-- genres -->
+                <div v-if="r.genre_ids.length > 0">
+                  <span class="info">Generi: </span>
+                  <span v-for="i in r.genre_ids.length">
+                    {{ (i-1 == 0) ? getGenre(r.genre_ids[i-1], i-1) : ", " + getGenre(r.genre_ids[i-1], i-1) }}
+                  </span>
+                </div>
+                <!-- / genres -->
 
-              <!-- overview -->
-              <div v-if="r.overview != ''" class="overview">
-                <span class="info">Overview: </span>
-                {{ lengthControl(r.overview, 430) }}
+                <!-- cast -->
+                <div v-if="r.hasOwnProperty('cast') && r.cast.length > 0">
+                  <span class="info">Cast: </span>
+                  <span v-for="i in r.cast.length">{{ (i-1 == 0) ? r.cast[i-1].name : ", " + r.cast[i-1].name }}</span>
+                </div>
+                <!-- / cast -->
+
+                <!-- overview -->
+                <div v-if="r.overview != ''" class="overview">
+                  <span class="info">Overview: </span>
+                  <!-- {{ r.overview }} -->
+                  {{ lengthControl(r.overview) }}
+                </div>
+                <!-- / overview -->
               </div>
-              <!-- / overview -->
 
               <!-- vl-box -->
               <div class="vl-box">

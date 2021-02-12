@@ -7,7 +7,8 @@ var app = new Vue({
     searchField: "",
     results: [],
     numGenres: [],
-    genres: []
+    genres: [],
+    maxDescriptionLength: 300
   },
   created() {
     // generi film
@@ -108,18 +109,18 @@ var app = new Vue({
       return r;
     },
     // controllo per ridurre la lunghezza del campo overview
-    lengthControl(text, max) {
-      let newText = text.substring(0, max);
+    lengthControl(text) {
+      let newText = text.substring(0, this.maxDescriptionLength);
 
-      if(newText.length == max && max != 0) {
+      if(newText.length == this.maxDescriptionLength && this.maxDescriptionLength != 0) {
 
         let i = 1;
 
-        while(newText[max-i] != " ") {
+        while(newText[this.maxDescriptionLength-i] != " ") {
           i++;
         }
 
-        newText = newText.substring(0, max-i);
+        newText = newText.substring(0, this.maxDescriptionLength-i);
         newText += "...";
 
       }
