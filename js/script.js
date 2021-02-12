@@ -67,7 +67,7 @@ var app = new Vue({
         .then((result) => {
           const newCast = result.data.cast.slice(0, 5);
           Vue.set(element, "cast", newCast);
-          this.$forceUpdate();
+          // this.$forceUpdate();
         })
         .catch((error) => {console.log(error)})
 

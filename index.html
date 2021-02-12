@@ -95,7 +95,7 @@
               <!-- / original-title -->
 
               <!-- cast -->
-              <div v-if="r.hasOwnProperty('cast')">
+              <div v-if="r.hasOwnProperty('cast') && r.cast.length > 0">
                 <span class="info">Cast: </span>
                 <span v-for="i in r.cast.length">{{ (i-1 == 0) ? r.cast[i-1].name : ", " + r.cast[i-1].name }}</span>
               </div>
