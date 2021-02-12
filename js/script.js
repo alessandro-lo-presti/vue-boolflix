@@ -5,7 +5,36 @@ var app = new Vue({
     language: "it",
     flags: ["it", "en"],
     searchField: "",
-    results: []
+    results: [],
+    numGenres: [],
+    genres: []
+  },
+  created() {
+    // generi film
+    axios
+      .get(" https://api.themoviedb.org/3/genre/movie/list?api_key=4ab0d1d0499ee909a6c7be564ccd102f&language=en-US")
+      .then((result) => {
+        result.data.genres.forEach((e) => {
+          if(!this.numGenres.includes(e.id)) {
+            this.numGenres.push(e.id);
+            this.genres.push(e.name);
+          }
+        });
+      })
+      .catch((error) => console.log(error));
+
+      // generi serie
+      axios
+        .get(" https://api.themoviedb.org/3/genre/tv/list?api_key=4ab0d1d0499ee909a6c7be564ccd102f&language=en-US")
+        .then((result) => {
+          result.data.genres.forEach((e) => {
+            if(!this.numGenres.includes(e.id)) {
+              this.numGenres.push(e.id);
+              this.genres.push(e.name);
+            }
+          });
+        })
+        .catch((error) => console.log(error));
   },
   methods: {
     // ricerca film
@@ -71,6 +100,12 @@ var app = new Vue({
         })
         .catch((error) => {console.log(error)})
 
+    },
+    //ottiene il genre
+    getGenre(value, index) {
+      let r
+      (this.numGenres.includes(value)) ? r = this.genres[index] : r = "";
+      return r;
     },
     // controllo per ridurre la lunghezza del campo overview
     lengthControl(text, max) {
