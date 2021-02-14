@@ -37,16 +37,20 @@ var app = new Vue({
           });
         })
         .catch((error) => console.log(error));
+
+        // ricerca automatica per riempire la pagina
+        this.searchMovies("a");
+        this.searchSeries("a");
   },
   methods: {
     // ricerca film
-    searchMovies() {
+    searchMovies(search) {
       axios
         .get("https://api.themoviedb.org/3/search/movie", {
           params: {
             api_key: this.apiKey,
             language: this.language,
-            query: this.searchField
+            query: search
           }
         })
         .then((result) => {
@@ -62,14 +66,14 @@ var app = new Vue({
         .catch((error) => console.log(error));
     },
     // ricerca serie
-    searchSeries() {
+    searchSeries(search) {
 
       axios
         .get("https://api.themoviedb.org/3/search/tv", {
           params: {
             api_key: this.apiKey,
             language: this.language,
-            query: this.searchField
+            query: search
           }
         })
         .then((result) => {
@@ -85,10 +89,11 @@ var app = new Vue({
     },
     // ricerca film e serie
     search() {
+      let search = this.searchField;
       this.c = 1;
       this.results = [];
-      this.searchMovies();
-      this.searchSeries();
+      this.searchMovies(search);
+      this.searchSeries(search);
     },
     // aggiungere il cast
     getCast(element, type) {

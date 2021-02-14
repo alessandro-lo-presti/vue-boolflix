@@ -102,6 +102,10 @@ header .container > div {
   color: white;
 }
 
+.hamburger-menu {
+  display: none;
+}
+
 /* main */
 
 main .container {
@@ -235,8 +239,30 @@ main .card .info-box .vl-box .lang .flag {
     height: 22.5px;
   }
 
+}
+
+/* hamburger */
+@media screen and (max-width: 850px) {
+
+  .header-left nav {
+    display: none;
+  }
+
+  .header-right > div:not(.hamburger-menu), .header-right > i, header .header-right > img{
+    display:none;
+  }
+
+  .hamburger-menu {
+    display: block;
+    font-size: 22px;
+  }
+
+  .setting-search {
+    justify-content: center;
+  }
 
 }
+/* hamburger */
 
 @media screen and (max-width: 700px) {
 
