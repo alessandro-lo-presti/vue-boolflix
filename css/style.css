@@ -182,3 +182,73 @@ main .card .info-box .vl-box .lang .flag {
   align-items: center;
 
 }
+
+/* media-query */
+@media screen and (max-width: 1620px) {
+
+  main .card {
+    flex-basis: calc(100% / 5 - 4px);
+  }
+
+}
+
+@media screen and (max-width: 1300px) {
+
+  .container {
+    max-width: calc(100vw - 100px);
+  }
+
+  main .card {
+    flex-basis: calc(100% / 4 - 4px);
+  }
+
+}
+
+
+@media screen and (max-width: 1000px) {
+
+  .container {
+    max-width: calc(100vw - 80px);
+  }
+
+  main .card {
+    flex-basis: calc(100% / 3 - 4px);
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+
+  .container {
+    max-width: calc(100vw - 60px);
+  }
+
+  main .card {
+    flex-basis: calc(100% / 2 - 4px);
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .container {
+    max-width: calc(100vw - 40px);
+  }
+
+  main .card {
+    height: 250px;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+
+  .container {
+    max-width: calc(100vw - 20px);
+  }
+
+  main .card {
+    height: 150px;
+  }
+
+}
