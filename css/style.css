@@ -144,7 +144,7 @@ main .card:hover .info-box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 main .card .info-box .info {
@@ -190,6 +190,10 @@ main .card .info-box .vl-box .lang .flag {
     flex-basis: calc(100% / 5 - 4px);
   }
 
+  main .card:hover .info-box {
+    font-size: 12px;
+  }
+
 }
 
 @media screen and (max-width: 1300px) {
@@ -201,6 +205,7 @@ main .card .info-box .vl-box .lang .flag {
   main .card {
     flex-basis: calc(100% / 4 - 4px);
   }
+
 
 }
 
@@ -214,6 +219,22 @@ main .card .info-box .vl-box .lang .flag {
   main .card {
     flex-basis: calc(100% / 3 - 4px);
   }
+
+  main .card:hover .info-box {
+    padding-top: 20px;
+  }
+
+  main .card .info-box .vl-box {
+    height: auto;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  main .card .info-box .vl-box .lang .flag {
+    width: 45px;
+    height: 22.5px;
+  }
+
 
 }
 
@@ -239,6 +260,22 @@ main .card .info-box .vl-box .lang .flag {
     height: 250px;
   }
 
+  main .card:hover .info-box {
+    padding-top: 10px;
+  }
+
+  main .card:hover .info-box {
+    font-size: 11px;
+  }
+
+  main .card .info-box .info-text > div {
+    padding-bottom: 2px;
+  }
+
+  .original_title, .lang {
+    display: none;
+  }
+
 }
 
 @media screen and (max-width: 450px) {
@@ -249,6 +286,10 @@ main .card .info-box .vl-box .lang .flag {
 
   main .card {
     height: 150px;
+  }
+
+  .overview {
+    display: none;
   }
 
 }
